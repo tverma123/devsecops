@@ -18,8 +18,8 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
         with: 
           args: >
-            -Dsonar.organization=tverma123
-            -Dsonar.projectKey=tverma123
+            -Dsonar.organization=devsecops
+            -Dsonar.projectKey=rtxdevsecops
             -Dsonar.branch.name=main
    
   build:
