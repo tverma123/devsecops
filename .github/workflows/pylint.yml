@@ -3,7 +3,7 @@ name: Sonar
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   sonarcloud:
@@ -23,7 +23,7 @@ jobs:
           args: >
             -Dsonar.organization=devsecops
             -Dsonar.projectKey=rtxdevsecops_devsecops
-            -Dsonar.branch.name=main
+            -Dsonar.branch.name=master
 
    
   build:
