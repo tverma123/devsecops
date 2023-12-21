@@ -20,6 +20,7 @@ jobs:
           args: >
             -Dsonar.organization=tverma123
             -Dsonar.projectKey=tverma123
+            -Dsonar.branch.name=main
    
   build:
 
