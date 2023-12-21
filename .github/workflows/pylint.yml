@@ -23,7 +23,6 @@ jobs:
           args: >
             -Dsonar.organization=devsecops
             -Dsonar.projectKey=rtxdevsecops_devsecops
-            -Dsonar.branch.name=master
 
    
   build:
