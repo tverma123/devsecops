@@ -1,6 +1,9 @@
 name: Sonar
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   sonarcloud:
@@ -8,19 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 
       - name: Sonar Scan
-        uses: sonarsource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@master
         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-           SONAR_HOST_URL: "https://sonarcloud.io"
-           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
         with: 
           args: >
             -Dsonar.organization=devsecops
-            -Dsonar.projectKey=devsecopsrtxdevsecops
+            -Dsonar.projectKey=rtxdevsecops_devsecops
             -Dsonar.branch.name=main
+
    
   build:
 
